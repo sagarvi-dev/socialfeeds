@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  provider: MyString
+  avatar_url: MyString
+  profile_url: MyString
+  refreshtoken: MyString
+
+two:
+  user_id: 
+  provider: MyString
+  avatar_url: MyString
+  profile_url: MyString
+  refreshtoken: MyString
