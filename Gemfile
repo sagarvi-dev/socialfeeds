@@ -24,9 +24,21 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-#gem 'activeadmin'
+gem 'twitter'
+gem 'omniauth-facebook'
+gem 'activerecord-session_store'
+gem "haml", '~> 4.0.6'
+gem "devise-token_authenticatable"
+gem "font-awesome-rails", '~> 4.3.0.0'
+gem "activeadmin", github: "activeadmin"
+gem "sidekiq", '~> 3.4.1'
+gem 'bootstrap-datetimepicker-rails'
+
+
+# Haml scaffolding functions
+gem 'haml-rails', '~> 0.9.0', :group => :development
+#gem 'activeadmin'	
  
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

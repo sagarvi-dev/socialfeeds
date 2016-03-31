@@ -34,9 +34,11 @@ class CallbacksController < Devise::OmniauthCallbacksController
     generic_callback( 'facebook' )
   end
 
-  def twitter
+def twitter
     generic_callback( 'twitter' )
   end
+
+
 
  def generic_callback( provider )
     @user = User.from_omniauth(request.env["omniauth.auth"])

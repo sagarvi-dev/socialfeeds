@@ -1,0 +1,14 @@
+.container
+  %footer.footer
+    .row
+      .col-lg-12
+        %ul.list-unstyled
+          %li.pull-right
+            %a{:href => "#top"} Back to top
+
+:javascript
+  $(document).ready(function() {
+    $("#flash_notice").delay(6000).fadeOut(300);
+  });
+
+
