@@ -5,7 +5,6 @@ class CreateMessages < ActiveRecord::Migration
       t.references :friend, index: true, foreign_key: true
       t.text :message
       t.boolean :is_read
-
       t.timestamps null: false
     end
   end

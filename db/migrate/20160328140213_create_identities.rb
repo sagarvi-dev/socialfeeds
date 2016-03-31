@@ -6,8 +6,12 @@ class CreateIdentities < ActiveRecord::Migration
       t.string :avatar_url
       t.string :profile_url
       t.string :refreshtoken
-
+      t.string :uid
+      t.string :accesstoken 
+      t.references :user_id
       t.timestamps null: false
     end
+    add_index :identities, [:uid, :provider], unique: true
+    add_index :identities, :user_id
   end
 end
