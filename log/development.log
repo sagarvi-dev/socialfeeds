@@ -38416,3 +38416,220 @@ Processing by Devise::SessionsController#new as HTML
   Rendered layouts/_header.html.haml (4.1ms)
   Rendered layouts/_footer.html.haml (0.2ms)
 Completed 200 OK in 84ms (Views: 82.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 14:31:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 62ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 14:31:04 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (4.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (218.1ms)
+  Rendered layouts/_header.html.haml (9.7ms)
+  Rendered layouts/_footer.html.haml (4.1ms)
+Completed 200 OK in 1498ms (Views: 1448.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 14:43:53 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 14:43:53 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (1.2ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (42.3ms)
+  Rendered layouts/_header.html.haml (4.9ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 176ms (Views: 173.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 14:58:07 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 74ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 14:58:08 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (3.0ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (108.9ms)
+  Rendered layouts/_header.html.haml (13.7ms)
+  Rendered layouts/_footer.html.haml (4.5ms)
+Completed 200 OK in 1334ms (Views: 1296.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:04:47 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (1.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (13.8ms)
+  Rendered layouts/_header.html.haml (24.1ms)
+  Rendered layouts/_footer.html.haml (0.2ms)
+Completed 200 OK in 165ms (Views: 162.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:04:52 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (3.3ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (21.1ms)
+  Rendered layouts/_header.html.haml (6.8ms)
+  Rendered layouts/_footer.html.haml (0.2ms)
+Completed 200 OK in 182ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:05:13 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (2.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (207.1ms)
+  Rendered layouts/_header.html.haml (12.9ms)
+  Rendered layouts/_footer.html.haml (4.2ms)
+Completed 200 OK in 861ms (Views: 795.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:05:26 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sXllXR34190t0zl7TnT9Tx0JA9j7AeV3vENlMwfXmr3g5UdJFbgHBMtVU34SSw941wKXMglbeEFvTjmy1ftG0A==", "user"=>{"email"=>"sagar4ahirrao@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "login"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "sagar4ahirrao@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (16.6ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-04-04 09:35:26.820756"], ["sign_in_count", 2], ["updated_at", "2016-04-04 09:35:26.823028"], ["id", 4]]
+  [1m[36m (143.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 544ms (ActiveRecord: 160.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:05:27 +0530
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.haml (4.5ms)
+  Rendered layouts/_footer.html.haml (1.2ms)
+Completed 200 OK in 153ms (Views: 148.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:07:08 +0530
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_header.html.haml (6.7ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 142ms (Views: 139.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-04-04 15:07:11 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:07:11 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:07:11 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (0.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (14.8ms)
+  Rendered layouts/_header.html.haml (4.1ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 123ms (Views: 120.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-04-04 15:07:14 +0530
+Processing by Devise::SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:07:14 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:07:14 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (1.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_header.html.haml (5.3ms)
+  Rendered layouts/_footer.html.haml (0.2ms)
+Completed 200 OK in 103ms (Views: 98.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:19:31 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 48ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:19:31 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (3.2ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (40.4ms)
+  Rendered layouts/_header.html.haml (9.5ms)
+  Rendered layouts/_footer.html.haml (3.9ms)
+Completed 200 OK in 3536ms (Views: 3505.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:19:35 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:19:35 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (1.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (10.2ms)
+  Rendered layouts/_header.html.haml (6.6ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 126ms (Views: 123.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:19:51 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rYH4ixxrrcYiNOXu0wCWF1wLFAdsVorw2nx3tqPw2cv1ZJnhLhRfUCFCnLpVLvti4ulFOyI1FFY2Q6tZzYhZLw==", "user"=>{"email"=>"sagar4ahirrao@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "login"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "sagar4ahirrao@gmail.com"]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-04-04 09:35:26.820756"], ["current_sign_in_at", "2016-04-04 09:49:51.169215"], ["sign_in_count", 3], ["updated_at", "2016-04-04 09:49:51.172278"], ["id", 4]]
+  [1m[36m (231.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 365ms (ActiveRecord: 233.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:19:51 +0530
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 4]]
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_header.html.haml (4.3ms)
+  Rendered layouts/_footer.html.haml (0.2ms)
+Completed 200 OK in 108ms (Views: 104.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-04-04 15:20:07 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-04 15:20:07 +0530
+Processing by WelcomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-04-04 15:20:07 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_auth_links.html.haml (1.0ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_header.html.haml (4.0ms)
+  Rendered layouts/_footer.html.haml (0.1ms)
+Completed 200 OK in 96ms (Views: 94.3ms | ActiveRecord: 0.0ms)

@@ -1,0 +1,59 @@
+/* Start Listing Style */
+.searchPannel{ background: #f4f5f5; width: 100%; height: 50px; display: inline-block; margin-bottom: 40px;}
+.searchPannel .searchLeft{ border-right: 1px solid #cccccc;}
+.searchPannel .selectBox{ display: inline-block; position: relative;}
+.searchPannel select{ height:50px; color: #a0a0a0; font-size: 14px; line-height:50px; border: none; box-shadow: none; background:transparent; outline:none; display: inline-block; -webkit-appearance:none; -moz-appearance:none; -ms-appearance: none; -o-appearance:none; appearance:none; cursor:pointer; text-transform:uppercase; padding-right: 36px; position: relative; z-index: 2;}
+.ie8 .searchPannel .searchLeft,
+.ie9 .searchPannel .searchLeft{ padding: 0px 20px;}
+.ie8 .searchPannel select,
+.ie9 .searchPannel select{ width: 100%; height: 30px; line-height: 30px; margin: 10px 0px; padding-right: 0;}
+.searchPannel select::-ms-expand{ display:none;}
+.searchPannel .selectBox:after{ content: "\f107"; display: inline-block; font-family: FontAwesome; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; transform: translate(0, 0); vertical-align: middle; font-size: 20px; color: #a0a0a0; position: absolute; right: 0; top: 15px;}
+.searchPannel .searchRight{ position: relative; padding-right: 161px;}
+.searchPannel .searchRight input.textBox{ background: none; border: none; width: 100%; font-size: 14px; color: #a0a0a0; font-family: 'latobold'; font-weight: normal; height: 50px; border-right: 5px solid #fff; padding-right: 30px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; line-height: 20px;}
+.searchPannel .searchRight .searchBtn{ background: #454545; border: none; height: 50px; width: 74px; position: absolute; right: 0; top: 0; color: #fff; font-size: 18px; right: 82px;}
+.searchPannel .searchRight .searchMinusBtn{ background: #454545; border: none; height: 50px; width: 74px; position: absolute; right: 0; top: 0; color: #fff; font-size: 18px;}
+.searchPannel .searchRight input.textBox:-moz-placeholder{ font-family: 'latoitalic'; color: #8e8e8e;}
+.searchPannel .searchRight input.textBox::-moz-placeholder{ font-family: 'latoitalic'; color: #8e8e8e;}
+.searchPannel .searchRight input.textBox:-ms-input-placeholder{ font-family: 'latoitalic'; color: #8e8e8e;}
+.searchPannel .searchRight input.textBox::-webkit-input-placeholder{ font-family: 'latoitalic'; color: #8e8e8e;}
+
+.loadMore{ display: inline-block; width: 100%; padding-top: 40px;}
+.loadMore a{ display: block; background: #e7eaeb; height: 54px; line-height: 54px; text-align: center; font-family: 'latobold'; color: #a0a0a0; font-size: 15px; font-weight: normal; text-transform: uppercase;}
+.loadMore a:hover{ background: #dcdfe0;}
+
+.errorMsg{ font-size: 13px; color: #bb0000; text-align: left; padding-top: 4px}
+
+.radioBtn{ position: relative; display: inline-block; text-align: left;}
+.radioBtn label{ font-size: 14px; color: #7c7c7c; text-transform: uppercase; font-weight: normal; line-height: 30px; padding-left: 45px; margin: 0; cursor: pointer; white-space: nowrap;}
+.radioBtn input[type=radio]{ position: absolute; left: 0; top: 0; z-index: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; filter: alpha(opacity=0); opacity: 0;}
+.radioBtn label .lbl{ width: 30px; height: 30px; background-position: 0 -191px; vertical-align: middle; position: absolute; left: 0; top: 0;}
+.radioBtn label.active .lbl{ background-position: 0 -221px;}
+
+
+.searchTags{ display: inline-block; width: 100%; padding-bottom: 15px;}
+.showTag{ display: inline-block; height: 50px; padding: 0px 18px; margin: 0 15px 15px 0px; background: #2c2c2c; color: #fff; font-size: 14px; font-family: 'latobold'; line-height:50px; text-transform: uppercase; border-radius: 3px;}
+.closeTag{ background-position: 0 -251px; width: 14px; height: 14px; margin-left: 16px; margin-top: 18px; vertical-align: top;}
+/* End Search Page Style */
+
+/* Start Footer Style */
+.footer{ padding: 35px 0; border-top: 1px solid #70787d;}
+.footer h2{ font-size: 18px; color: #fff; font-family: 'montserratbold'; font-weight: normal; text-transform: uppercase; margin: 0; padding-bottom:34px;}
+.footer p{ font-size: 16px; color: #70787d; line-height: 24px; margin: 0px; padding-bottom:8px;}
+.footer span{ color: #fff; line-height: 24px;}
+.footerBottom{ padding-top: 100px;}
+.footer p.copyRight{ display: inline-block; padding-top: 20px; width: 100%;}
+/* End Footer Style */
+
+.hidden {display: none;}
+
+/* Div base Listing */
+.listingDiv{ border-bottom: 3px solid #70787d; margin-bottom: 20px; }
+
+.jscroll-loading{ text-align: center; padding: 18px 0;}
+.social-share-button { margin: 0; padding: 3px 10px;}
+.social-share-button a{ margin: 0!important;}
+.left {float: left;}
+.right {float: right;}
+.mb20 {margin-bottom: 20px;}
+.userImage img{ width: 54px; height: 54px; border-radius: 100%; display: inline-block;}

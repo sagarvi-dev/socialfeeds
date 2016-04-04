@@ -34,7 +34,9 @@ gem "font-awesome-rails", '~> 4.3.0.0'
 gem "activeadmin", github: "activeadmin"
 gem "sidekiq", '~> 3.4.1'
 gem 'bootstrap-datetimepicker-rails'
-
+gem 'haml-rails', '~> 0.9.0', :group => :development
+gem "font-awesome-rails", '~> 4.3.0.0'
+gem 'meta-tags', :require => 'meta_tags'
 
 # Haml scaffolding functions
 gem 'haml-rails', '~> 0.9.0', :group => :development
