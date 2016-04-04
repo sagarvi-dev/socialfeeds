@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404053737) do
+ActiveRecord::Schema.define(version: 20160329060809) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"
@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 20160404053737) do
 
   add_index "friends", ["user_id"], name: "index_friends_on_user_id"
 
-  create_table "identities", id: false, force: :cascade do |t|
-    t.integer  "id",           null: false
+  create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "avatar_url"
@@ -76,15 +75,12 @@ ActiveRecord::Schema.define(version: 20160404053737) do
     t.string   "username"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "provider"
     t.string   "uid"
+    t.string   "provider"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"    
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
 
 end

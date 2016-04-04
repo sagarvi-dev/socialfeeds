@@ -13,7 +13,7 @@
               = alert
 
     .form-group{:class => (resource.errors["password"].any? ? "has-error" : '')}
-      %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.new_password')
+      %label.col-lg-2.control-label{:for => "inputPassword"} New Password
       .col-lg-10
         = f.password_field :password, autofocus: true, autocomplete: "off"
         - if resource.errors["password"].any?
@@ -21,7 +21,7 @@
             = resource.errors["password"].first
 
     .form-group{:class => (resource.errors["password_confirmation"].any? ? "has-error" : '')}
-      %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.confirm_password')
+      %label.col-lg-2.control-label{:for => "inputPassword"} Confirm Password'
       .col-lg-10
         = f.password_field :password_confirmation, autocomplete: "off"
         - if resource.errors["password_confirmation"].any?
@@ -30,8 +30,7 @@
     
     .form-group
       .col-lg-10.col-lg-offset-2        
-        = f.submit "change_my_password" :class => "btn btn-success"
-    
+        = f.submit "change_my_password" 
     .form-group
       .col-lg-10.col-lg-offset-2        
         = link_to "Log in", new_session_path(resource_name), :class => "btn btn-info"

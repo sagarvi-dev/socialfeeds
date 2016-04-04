@@ -41,10 +41,10 @@ def twitter
 
 
  def generic_callback( provider )
-   @user = User.from_omniauth(request.env["omniauth.auth"])
+    @user = User.from_omniauth(request.env["omniauth.auth"])
     @identity = Identity.find_for_oauth env["omniauth.auth"]
 
-     @identity.user = @user|| current_user
+    @identity.user = @user || current_user
     if @user.nil?
       @user = User.create( email: @identity.email || "" )
       @identity.update_attribute( :user_id, @user.id )
