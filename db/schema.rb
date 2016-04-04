@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(version: 20160329060809) do
 
   add_index "friends", ["user_id"], name: "index_friends_on_user_id"
 
-  create_table "identities", force: :cascade do |t|
+  create_table "identities", id: false, force: :cascade do |t|
+    t.integer  "id",           null: false
     t.integer  "user_id"
     t.string   "provider"
     t.string   "avatar_url"
@@ -75,8 +76,11 @@ ActiveRecord::Schema.define(version: 20160329060809) do
     t.string   "username"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "uid"
     t.string   "provider"
+    t.string   "uid"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
