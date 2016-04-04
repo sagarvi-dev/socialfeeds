@@ -39,7 +39,6 @@ gem "font-awesome-rails", '~> 4.3.0.0'
 gem 'meta-tags', :require => 'meta_tags'
 
 # Haml scaffolding functions
-gem 'haml-rails', '~> 0.9.0', :group => :development
 #gem 'activeadmin'	
  
 # Use ActiveModel has_secure_password
