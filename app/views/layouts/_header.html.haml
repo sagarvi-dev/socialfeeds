@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand{:href => "#"}
-        = t("guruka")
+        = t("Social Feeds")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li{:class => (@home_active ? "active" : "")}
@@ -15,25 +15,11 @@
 
       %ul.nav.navbar-nav.navbar-right
         - if current_user
-          %li{:class => (@stack_active ? "active" : "")}
-            
-          / %li
-          /   %span.userImage
-          /     = image_tag current_user.avatar(:thumb)
           %li.dropdown
-            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-             
-              %span.caret
-            %ul.dropdown-menu{:role => "menu"}
-              %li
-              
-              - if 
-                %li
-                %li
-              %li
-              %li
-              %li
-              
+          = current_user.firstname
+          %span.caret
           %li
-         
-
+            = link_to 'sign_out', '/users/sign_out', :class =>'btn btn-danger btn-sm'
+        - else
+        %li
+            

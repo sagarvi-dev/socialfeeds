@@ -11,7 +11,12 @@ end
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
+<<<<<<< Updated upstream
 
+=======
+  
+    default_url_options :host => "localhost:3000"
+>>>>>>> Stashed changes
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
