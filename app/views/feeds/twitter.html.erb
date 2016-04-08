@@ -1,0 +1,23 @@
+<!--   <ul>
+    <% @tweets.each do |tweet| %>
+      <li><%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %></li>
+      <%end%>	
+  </ul> -->
+<div class="row" style="margin-top: 16px;width: 1000px;">
+  <div class="span5">
+  <h1>Twitter Feeds</h1>
+ 
+    <table class="table table-striped">
+      <tr>
+        
+        <th> MY Tweets</th>
+         <!-- <th> My Timeline </th> -->
+      </tr>
+    <% @tweets.each do |tweet| %>
+        <tr>
+          <td><%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %></td>
+        </tr>
+      <% end %>
+     
+  </table>
+  </div>

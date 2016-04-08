@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="span4">
+    <div class="thumbnail">
+      <img src="<%= @picture %>" style="float: left;margin: 5px;">
+      <h4><%= @profile["name"] %></h4>
+      
+     </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 16px;width: 1000px;">
+  <div class="span5">
+  <h1>Facebook Feeds</h1>
+ 
+    <table class="table table-striped">
+      <tr>
+        
+        <th>Name</th>
+        <th>Message</th>
+        <th>Picture</th>
+        <th>description</th>
+        <th>Caption</th>
+        <th>Friends</th>
+      </tr>
+      <% @feed.each do |f| %>
+        <tr>
+          <td><%= f["name"] %></td>
+          <td><%= f["message"] %></td>
+          <td><img src="<%= f["picture"] %>"></td>
+          <td><%= f["description"] %></td>
+          <td><%= f["caption"] %></td>
+          <td><%= f["friends"] %></td>
+        </tr>
+      <% end %>
+     
+  </table>
+  </div>
+  <div class="span5">
+  <h1>Friends</h1>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+      </tr>
+      <% @friends.each do |f| %>
+        <tr>
+          <td><a href="http://facebook.com/<%= f["id"] %>"><%= f["name"] %></a></td>
+        </tr>
+      <% end %>
+  </table>
+  </div>
+</div>

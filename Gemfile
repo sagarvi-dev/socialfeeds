@@ -27,14 +27,13 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem 'omniauth-facebook'
+gem "koala"
 gem 'activerecord-session_store'
 gem "haml", '~> 4.0.6'
 gem "devise-token_authenticatable"
-gem "font-awesome-rails", '~> 4.3.0.0'
 gem "activeadmin", github: "activeadmin"
 gem "sidekiq", '~> 3.4.1'
 gem 'bootstrap-datetimepicker-rails'
-gem 'haml-rails', '~> 0.9.0', :group => :development
 gem "font-awesome-rails", '~> 4.3.0.0'
 gem 'meta-tags', :require => 'meta_tags'
 

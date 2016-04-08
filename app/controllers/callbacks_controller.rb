@@ -51,7 +51,7 @@ def twitter
     end
 
     if @user.email.blank? && @identity.email
-      @user.update_attribute( :email, @identity.email)
+      @user.update_attribute( :email, @identity.email || "")
     end
 
     if @user.persisted?

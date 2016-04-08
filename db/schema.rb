@@ -14,15 +14,14 @@
 ActiveRecord::Schema.define(version: 20160329060809) do
 
   create_table "feeds", force: :cascade do |t|
+    t.text     "accesstoken"
     t.integer  "user_id"
     t.text     "timeline"
     t.string   "url"
     t.string   "provider"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id"
 
   create_table "friends", force: :cascade do |t|
     t.integer  "user_id"
