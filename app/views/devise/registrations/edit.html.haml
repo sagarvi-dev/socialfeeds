@@ -1,43 +1,39 @@
-= form_for(resource, as: resource_name, url: password_path(resource_name), :html => {:class => "form-horizontal", :method => "put"}) do |f|
-  = f.hidden_field :reset_password_token
-  %fieldset
-    %legend
-      = t('recovery.recover_password')
-    .form-group
-      %label.col-lg-2.control-label
-      .col-lg-10
-        - if alert.present?
-          .alert.alert-dismissible.alert-danger
-            %button.close{"data-dismiss" => "alert", :type => "button"} ×
-            %a.alert-link{:href => "#"}
-              = alert
+/ = form_for(resource, as: resource_name, url: password_path(resource_name), :html => {:class => "form-horizontal", :method => "put"}) do |f|
+/   = f.hidden_field :reset_password_token
+/   %fieldset
+/     %legend
+/       = t('recovery.recover_password')
+/     .form-group
+/       %label.col-lg-2.control-label
+/       .col-lg-10
+/         - if alert.present?
+/           .alert.alert-dismissible.alert-danger
+/             %button.close{"data-dismiss" => "alert", :type => "button"} ×
+/             %a.alert-link{:href => "#"}
+/               = alert
 
-    .form-group{:class => (resource.errors["password"].any? ? "has-error" : '')}
-      %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.new_password')
-      .col-lg-10
-        = f.password_field :password, autofocus: true, autocomplete: "off", placeholder: t('change_password.new_password'), :class => "form-control"
-        - if resource.errors["password"].any?
-          .errorMsg
-            = resource.errors["password"].first
+/     .form-group{:class => (resource.errors["password"].any? ? "has-error" : '')}
+/       %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.new_password')
+/       .col-lg-10
+/         = f.password_field :password, autofocus: true, autocomplete: "off", placeholder: t('change_password.new_password'), :class => "form-control"
+/         - if resource.errors["password"].any?
+/           .errorMsg
+/             = resource.errors["password"].first
 
-    .form-group{:class => (resource.errors["password_confirmation"].any? ? "has-error" : '')}
-      %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.confirm_password')
-      .col-lg-10
-        = f.password_field :password_confirmation, autocomplete: "off", placeholder: t('change_password.confirm_password'), :class => "form-control"
-        - if resource.errors["password_confirmation"].any?
-          .errorMsg
-            = resource.errors["password_confirmation"][0]        
-    .form-group
-      .col-lg-10.col-lg-offset-2        
-        = f.submit t('change_password.change_my_password'), :class => "btn btn-success"
-    .form-group
-      .col-lg-10.col-lg-offset-2        
-        = link_to t('general.have_an_account'), sign_in_path, :class => "btn btn-info"
-        = link_to t('general.create_an_account'), sign_up_path, :class => "btn btn-info", 'data-no-turbolink' => true
-
-
-
-
+/     .form-group{:class => (resource.errors["password_confirmation"].any? ? "has-error" : '')}
+/       %label.col-lg-2.control-label{:for => "inputPassword"} = t('change_password.confirm_password')
+/       .col-lg-10
+/         = f.password_field :password_confirmation, autocomplete: "off", placeholder: t('change_password.confirm_password'), :class => "form-control"
+/         - if resource.errors["password_confirmation"].any?
+/           .errorMsg
+/             = resource.errors["password_confirmation"][0]        
+/     .form-group
+/       .col-lg-10.col-lg-offset-2        
+/         = f.submit t('change_password.change_my_password'), :class => "btn btn-success"
+/     .form-group
+/       .col-lg-10.col-lg-offset-2        
+/         = link_to t('general.have_an_account'), sign_in_path, :class => "btn btn-info"
+/         = link_to t('general.create_an_account'), sign_up_path, :class => "btn btn-info", 'data-no-turbolink' => true
 
 %h2
   Edit #{resource_name.to_s.humanize}

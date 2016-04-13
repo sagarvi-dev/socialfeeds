@@ -1,23 +1,29 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  
+  resources :user
+  resources :friendships
+  resources :messages, only: [:new, :create]
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
 
 devise_scope :user do
   get 'users/sign_out', :to => 'devise/sessions#destroy'
   match "/facebook" => "feeds#facebook", via: [:get,:post]
   match "/twitter" => "feeds#twitter", via: [:get,:post]
-
+  get '/dashboard', :to => 'dashboard#index'
+  get '/friends', :to => 'friends#index'
+  match "/message" => "messages#new", via: [:get,:post]
 end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+   
    root 'welcome#index'
   
-    default_url_options :host => "localhost:3000"
+  default_url_options :host => "localhost:3000"
 
-  # Example of regular route:
+  # ddExample of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

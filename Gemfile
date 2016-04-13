@@ -36,7 +36,8 @@ gem "sidekiq", '~> 3.4.1'
 gem 'bootstrap-datetimepicker-rails'
 gem "font-awesome-rails", '~> 4.3.0.0'
 gem 'meta-tags', :require => 'meta_tags'
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'paperclip'
 # Haml scaffolding functions
 #gem 'activeadmin'	
  
