@@ -1,6 +1,5 @@
 <%= @user.email %>
-<<<<<<< HEAD
-    
+  
     <% if current_user == @user %>
         <h4>Friend Requests</h4>
         <ul>
@@ -14,13 +13,12 @@
         </ul>
     <% end %>
     
-=======
 <ul>
   <% for user in @user.friends %>
   <li><%= h user.email %></li>
   <% end %>  
 </ul>
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
+
 
 <div class="container" style="padding-top: 60px;">
  <h1 class="page-header">Profile</h1>
@@ -66,10 +64,6 @@
         <%= @user.email %>
          </div>
        </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
        
        <div class="form-group">
          <label class="col-md-3 control-label">Username:</label>
@@ -81,13 +75,8 @@
          <label class="col-md-3 control-label"></label>
          <div class="col-md-8">
   <% if @user.id != current_user.id %>  
-<<<<<<< HEAD
             <%= link_to t('Send Request'),friendships_path(:friend_id => @user), :method => :post , :class => 'btn btn-info btn-sm' %>
-=======
-       
-            <%= link_to t('Send Request'),'#' , :class => 'btn btn-info btn-sm' %>
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
-            <%= link_to t('Message'), '/message', :class => 'btn btn-success btn-sm' %>
+     <%= link_to t('Message'), '/message', :class => 'btn btn-success btn-sm' %>
    <% else %>
   <%= link_to t('Edit Profile'), edit_user_registration_path, :class => 'btn btn-default btn-sm' %>
    <% end %>
@@ -96,7 +85,7 @@
      </form>
    </div>
  </div>
-<<<<<<< HEAD
+
   <h2>Friends</h2>
     <ul>
         <% @user.friends.each do |friend| %>
@@ -108,6 +97,5 @@
         </li>
       <% end %>
     </ul>
-=======
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
+
 </div>

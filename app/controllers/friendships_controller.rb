@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class FriendshipsController < InheritedResources::Base
    
     def create
@@ -36,19 +36,4 @@ class FriendshipsController < InheritedResources::Base
     end
 end
 
-=======
-class FriendshipsController < ApplicationController
 
-def create
-  @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
-  if @friendship.save
-    flash[:notice] = "Added friend."
-    redirect_to root_url
-  else
-    flash[:notice] = "Unable to add friend."
-    redirect_to root_url
-  end
-end
-
-end
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c

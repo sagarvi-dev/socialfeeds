@@ -38,10 +38,8 @@ gem "font-awesome-rails", '~> 4.3.0.0'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'paperclip'
-<<<<<<< HEAD
 gem 'mailboxer'
-=======
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
+
 # Haml scaffolding functions
 #gem 'activeadmin'	
  

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :identities
   has_many :messages, dependent: :delete_all
   has_many :friendships
-<<<<<<< HEAD
+
   has_many :passive_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
 
   has_many :active_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
@@ -18,9 +18,7 @@ class User < ActiveRecord::Base
     def friends
       active_friends | passive_friends
     end
-=======
-  has_many :friends, :through => :friendships
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
+
 
    def self.from_omniauth(auth)
     # identity = Identity.where(:provider => auth.provider, :uid => auth.uid, :accesstoken => auth.credentials.token ).first_or_create do |user|

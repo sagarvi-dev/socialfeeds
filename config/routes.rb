@@ -2,10 +2,6 @@ Rails.application.routes.draw do
   resources :friendships
   get 'welcome/index'
   resources :user
-<<<<<<< HEAD
-=======
-  resources :friendships
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
   resources :messages, only: [:new, :create]
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
 
@@ -15,11 +11,7 @@ devise_scope :user do
   match "/twitter" => "feeds#twitter", via: [:get,:post]
   get '/dashboard', :to => 'dashboard#index'
   get '/friends', :to => 'friends#index'
-<<<<<<< HEAD
   match "/messages" => "messages#new", via: [:get,:post]
-=======
-  match "/message" => "messages#new", via: [:get,:post]
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
 end
   
   # The priority is based upon order of creation: first created -> highest priority.
