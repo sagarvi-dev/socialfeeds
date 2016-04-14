@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class FriendshipsControllerTest < ActionController::TestCase
+<<<<<<< HEAD
   setup do
     @friendship = friendships(:one)
   end
@@ -46,4 +47,9 @@ class FriendshipsControllerTest < ActionController::TestCase
 
     assert_redirected_to friendships_path
   end
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
 end
