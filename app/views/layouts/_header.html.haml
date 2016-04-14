@@ -6,17 +6,24 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"}
+      %a.navbar-brand{:href => "/"}
         = t("Social Feeds")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li{:class => (@home_active ? "active" : "")}
-          = link_to t('general.home'), root_path
+        - if current_user
+          %li{:class => (@home_active ? "active" : "")}
+            = link_to t('general.home'), root_path
+          %li
+            = link_to t('general.dashboard'), '/dashboard'
+          %li
+            = link_to t('general.friends'), '/friends'   
+        -else
+          %li{:class => (@home_active ? "active" : "")}
+            = link_to t('general.home'), root_path     
       %ul.nav.navbar-nav.navbar-right
         - if current_user
           %li
             %span.userImage
-<<<<<<< HEAD
               %img{:src => @picture}/
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -24,25 +31,12 @@
               %span.caret
                 %ul.dropdown-menu{:role => "menu"}
                   %li
+                    = link_to t('general.profile'),current_user 
+                  %li
+                    = link_to t('general.change_password') , edit_user_registration_path
+                  %li
                     = link_to 'Logout', destroy_user_session_path, :method => :delete
-=======
-              = image_tag current_user.avatar_url
-          %li.dropdown
-            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              = current_user.full_name
-              %span.caret
-            %ul.dropdown-menu{:role => "menu"}
-              %li
-                = link_to "#{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
-      
-
->>>>>>> 8bc57c6bacfb4471713ccf37941e5649975ff95f
-      %ul.nav.navbar-nav.navbar-right
-        - if current_user
-          %li.dropdown
-          = current_user.firstname
-          %span.caret
-          
-        - else
-        %li
+        - else 
+          %li
+            = link_to "login", new_user_session_path
             

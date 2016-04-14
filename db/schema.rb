@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329060809) do
+ActiveRecord::Schema.define(version: 20160414080559) do
 
   create_table "feeds", force: :cascade do |t|
-    t.text     "accesstoken"
     t.integer  "user_id"
     t.text     "timeline"
     t.string   "url"
@@ -33,7 +32,16 @@ ActiveRecord::Schema.define(version: 20160329060809) do
 
   add_index "friends", ["user_id"], name: "index_friends_on_user_id"
 
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.boolean  "approved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "identities", force: :cascade do |t|
+    t.string   "secret"
     t.integer  "user_id"
     t.string   "provider"
     t.string   "avatar_url"
@@ -49,16 +57,14 @@ ActiveRecord::Schema.define(version: 20160329060809) do
   create_table "messages", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
-    t.text     "message"
+    t.text     "body"
     t.boolean  "is_read"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "messages", ["friend_id"], name: "index_messages_on_friend_id"
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
-
   create_table "users", force: :cascade do |t|
+    t.string   "avatar"
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "reset_password_token"
