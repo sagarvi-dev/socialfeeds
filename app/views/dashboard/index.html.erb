@@ -11,8 +11,6 @@
                    <%= image_tag identity.avatar_url , :class => 'img-responsive'%>
                 </a>
                 <%=link_to identity.email, identity.user%>
-
-                 <%= link_to "Add Friend", friendships_path(:friend_id => identity.user), :method => :post %>
       <div class="clear"></div>
     </div>
 <% end %>

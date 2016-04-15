@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414080559) do
+ActiveRecord::Schema.define(version: 20160415043502) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20160414080559) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "avatar"
     t.string   "email"
     t.string   "encrypted_password"
     t.string   "reset_password_token"
@@ -86,6 +85,10 @@ ActiveRecord::Schema.define(version: 20160414080559) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

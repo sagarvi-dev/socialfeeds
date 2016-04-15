@@ -3,15 +3,9 @@
 one:
   user_id: 1
   friend_id: 1
-<<<<<<< HEAD
   approved: false
-=======
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
 
 two:
   user_id: 1
   friend_id: 1
-<<<<<<< HEAD
-  approved: false
-=======
->>>>>>> aa833e6a306d070bdf5fadaf72091d2f84464f1c
+ approved: false
