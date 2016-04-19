@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :identities
   has_many :messages, dependent: :delete_all
   has_many :friendships
-
   has_many :passive_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
 
   has_many :active_friends, -> { where(friendships: { approved: true}) }, :through => :friendships, :source => :friend
@@ -26,7 +25,7 @@ class User < ActiveRecord::Base
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       #user.provider = auth.provider
       #user.uid = auth.uid
-        user.avatar = auth.info.image 
+        user.username = auth.info.name
         user.email = auth.info.email || "#{auth.uid}@#{auth.provider}.com"
         user.password = Devise.friendly_token[0,20]
         user.save

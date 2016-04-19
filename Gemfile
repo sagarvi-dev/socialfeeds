@@ -39,7 +39,6 @@ gem 'meta-tags', :require => 'meta_tags'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'paperclip'
 gem 'mailboxer'
-
 # Haml scaffolding functions
 #gem 'activeadmin'	
  

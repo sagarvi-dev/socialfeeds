@@ -11,8 +11,10 @@
             %button.close{"data-dismiss" => "alert", :type => "button"}
             %a.alert-link{:href => "#"}
               = alert
-           
-   
+    .form-group{:class => (resource.errors["username"].any? ? "has-error" : '')}
+      %label.col-lg-2.control-label{:for => "inputUsername"} Username
+      .col-lg-10
+        = f.text_field :username, autofocus: true, placeholder: 'signup username', :class => "form-control"
     .form-group{:class => (resource.errors["email"].any? ? "has-error" : '')}
       %label.col-lg-2.control-label{:for => "inputEmail"} Email
       .col-lg-10

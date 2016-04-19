@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :user
   resources :messages, only: [:new, :create]
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
+  devise_for :users, :controllers => {:registrations => 'registrations' ,:omniauth_callbacks => "callbacks"}
 
 devise_scope :user do
   get 'users/sign_out', :to => 'devise/sessions#destroy'

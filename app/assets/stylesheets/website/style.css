@@ -1,4 +1,19 @@
 /* Start Listing Style */
+.avatar{
+height : 200px;
+width: 250px;
+}
+.banner {
+  width:100%;
+  height:512px;
+  background-image:url('https://c.stocksy.com/a/RcN300/z0/805779.jpg') ;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.banner img {
+  width:100%;
+}
+
 
 .searchPannel {
     background: #f4f5f5;

@@ -4,9 +4,9 @@
         <ul>
             <% @user.requested_friendships.each do |request| %>
             <li>
-              <%= request.email %> 
-              <%= link_to "Accept", friendship_path(:id => request), :method => "put", :class => 'btn btn-success btn-sm' %> 
-              <%= link_to "Decline", friendship_path(:id => request), :method => :delete, :class => 'btn btn-warning btn-sm' %>
+              <%= request.email %>
+               <%= link_to "Accept", friendship_path(:id => request), :method => "put", :class => 'btn btn-success btn-sm glyphicon glyphicon-ok' %> 
+              <%= link_to "Decline", friendship_path(:id => request), :method => :delete, :class => 'btn btn-warning btn-sm glyphicon glyphicon-remove' %>
             </li>
           <% end %>
         </ul>
@@ -18,20 +18,13 @@
    <!-- left column -->
    <div class="col-md-4 col-sm-6 col-xs-12">
      <div class="text-center">
-   <%= image_tag @user.avatar.url, :class => 'thumbnail img-thumbnail'%>
-     
-     <!--   <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar"> -->
-       <!-- <h6>Upload a different photo...</h6>
-       <input type="file" class="text-center center-block well well-sm"> -->
-     </div>
+   <%= image_tag @user.avatar.url, :class => 'avatar img-rounded'%>
+  
    </div>
-   <!-- edit form column -->
+ </div>
+   
    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
-     <!-- <div class="alert alert-info alert-dismissable">
-       <a class="panel-close close" data-dismiss="alert">×</a> 
-       <i class="fa fa-coffee"></i>
-       This is an <strong>.alert</strong>. Use this to show important messages to the user.
-     </div> -->
+    
      <h3>Personal info</h3>
      <form class="form-horizontal" role="form">
        <div class="form-group">
@@ -46,13 +39,7 @@
           <%= @user.lastname %>
          </div>
        </div>
-       <!-- <div class="form-group">
-         <label class="col-lg-3 control-label">Company:</label>
-         <div class="col-lg-8">
-           <input class="form-control" value="" type="text">
-         </div>
-       </div> -->
-       <div class="form-group">
+        <div class="form-group">
          <label class="col-lg-3 control-label">Email:</label>
          <div class="col-lg-8">
         <%= @user.email %>
@@ -68,9 +55,9 @@
 <div class="form-group">
          <label class="col-md-3 control-label"></label>
          <div class="col-md-8">
-  <% if @user.id != current_user.id %>  
-            <%= link_to t('Send Request'),friendships_path(:friend_id => @user), :method => :post , :class => 'btn btn-info btn-sm' %>
-     <%= link_to t('Message'), '/message', :class => 'btn btn-success btn-sm' %>
+  <% if @user != current_user %>  
+        <%= link_to t('Send Request'),friendships_path(:friend_id => @user), :method => :post , :class => 'btn btn-info btn-sm' %>
+       <%= link_to t('Message'), '/messages', :class => 'btn btn-success btn-sm' %>
    <% else %>
   <%= link_to t('Edit Profile'), edit_user_registration_path, :class => 'btn btn-default btn-sm' %>
    <% end %>
@@ -86,7 +73,7 @@
         <li>
           <%= link_to friend.email, friend %> 
           <% if current_user == @user %>
-            <%= link_to "Unfriend", friendship_path(:id => friend), :method => :delete, :class => 'btn btn-danger btn-sm' %>
+            <%= link_to "Unfriend", friendship_path(:id => friend), :method => :delete, :class => 'btn btn-danger btn-sm glyphicon glyphicon-minus' %>
           <% end %>
         </li>
       <% end %>
