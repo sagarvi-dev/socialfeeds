@@ -56,8 +56,11 @@
          <label class="col-md-3 control-label"></label>
          <div class="col-md-8">
   <% if @user != current_user %>  
-        <%= link_to t('Send Request'),friendships_path(:friend_id => @user), :method => :post , :class => 'btn btn-info btn-sm' %>
-       <%= link_to t('Message'), '/messages', :class => 'btn btn-success btn-sm' %>
+        <% unless current_user.is_friend?(@user) %>
+         <%= link_to t('Send Request'),friendships_path(:friend_id => @user), :method => :post , :class => 'btn btn-info btn-sm' %>
+        <% else %>
+        <%= link_to t('Message'), '/messages', :class => 'btn btn-success btn-sm' %>
+        <% end %>
    <% else %>
   <%= link_to t('Edit Profile'), edit_user_registration_path, :class => 'btn btn-default btn-sm' %>
    <% end %>

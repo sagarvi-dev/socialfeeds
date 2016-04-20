@@ -27,7 +27,7 @@
               = image_tag(current_user.avatar.url(:thumb))
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              = current_user.email
+              = current_user.username
               %span.caret
                 %ul.dropdown-menu{:role => "menu"}
                   %li

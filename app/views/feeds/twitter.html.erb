@@ -1,8 +1,9 @@
 <div class="container">
 <div class="row" style="margin-top: 16px;width: 1000px;">
+<% if current_user.identities.find_by_provider("twitter") %>
   <div class="span5">
   <h1>Twitter Feeds</h1>
- 
+   
     <table class="table table-striped">
       <tr>
         
@@ -16,5 +17,8 @@
       <% end %>
      
   </table>
+<%else%>
+  <%= link_to "twitter", '/users/auth/twitter', :class => 'btn btn-primary' %>
+ <%end%>
 </div>
   </div>

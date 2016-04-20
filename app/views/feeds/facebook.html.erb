@@ -1,5 +1,6 @@
 <div class="container">
 <div class="row">
+  <% if current_user.identities.find_by_provider("facebook") %>
   <div class="span4">
     <div class="thumbnail">
       <img src="<%= @picture %>" style="float: left;margin: 5px;">
@@ -49,5 +50,8 @@
       <% end %>
   </table>
   </div>
+  <%else%>
+  <%= link_to "facebook", '/users/auth/facebook', :class => 'btn btn-primary' %>
+ <%end%> 
 </div>
 </div>
