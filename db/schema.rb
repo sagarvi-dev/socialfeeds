@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20160415043502) do
     t.text     "timeline"
     t.string   "url"
     t.string   "provider"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id"
 
   create_table "friends", force: :cascade do |t|
     t.integer  "user_id"
@@ -41,54 +43,60 @@ ActiveRecord::Schema.define(version: 20160415043502) do
   end
 
   create_table "identities", force: :cascade do |t|
-    t.string   "secret"
     t.integer  "user_id"
     t.string   "provider"
     t.string   "avatar_url"
     t.string   "profile_url"
     t.string   "refreshtoken"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "accesstoken"
     t.string   "uid"
-    t.string   "email"
+    t.string   "accesstoken"
+    t.integer  "user_id_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "messages", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
-    t.text     "body"
+    t.text     "message"
     t.boolean  "is_read"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_index "messages", ["friend_id"], name: "index_messages_on_friend_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+
   create_table "users", force: :cascade do |t|
-    t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count"
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "username"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "uid"
-    t.string   "provider"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -3,18 +3,18 @@ class Identity < ActiveRecord::Base
   validates_presence_of :uid, :provider
   validates_uniqueness_of :uid, :scope => :provider
 
-def self.find_for_oauth(auth)
-    identity = find_by(provider: auth.provider, uid: auth.uid)
-    identity = create(uid: auth.uid, provider: auth.provider) if identity.nil?
-    identity.email=auth.info.email || "#{auth.info.name}@#{auth.provider}.com"
-    identity.accesstoken = auth.credentials.token
-    identity.secret = auth.credentials.secret
-    identity.refreshtoken = auth.credentials.refresh_token
-    identity.avatar_url = auth.info.image
-    identity.profile_url = auth.info.link
-    identity.save
-    identity
-  end
+# def self.find_for_oauth(auth)
+#     identity = find_by(provider: auth.provider, uid: auth.uid)
+#     identity = create(uid: auth.uid, provider: auth.provider) if identity.nil?
+#     identity.email=auth.info.email || "#{auth.info.name}@#{auth.provider}.com"
+#     identity.accesstoken = auth.credentials.token
+#     identity.secret = auth.credentials.secret
+#     identity.refreshtoken = auth.credentials.refresh_token
+#     identity.avatar_url = auth.info.image
+#     identity.profile_url = auth.info.link
+#     identity.save
+#     identity
+#   end
 
 # identity = identities.find_by_provider("twitter")
 # client = Twitter::REST::Client.new do |config|

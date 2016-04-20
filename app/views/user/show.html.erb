@@ -70,7 +70,21 @@
    </div>
  </div>
 
-  <h2>Friends</h2>
+<% if current_user == @user %>
+<div class="row">
+<h2>Connect Account</h2>
+<% ['facebook', 'twitter'].each do |provider| %>
+  <% if current_user.identities.pluck(:provider).include?(provider.to_s) %>
+    <%= provider.to_s.titleize %> Connected
+  <% else %>
+      <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path('user', provider) %>
+  <% end %>
+<br/>
+<% end %>
+</div>
+<% end %>
+
+ <h2>Friends</h2>
     <ul>
         <% @user.friends.each do |friend| %>
         <li>

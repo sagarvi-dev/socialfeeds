@@ -41,28 +41,38 @@ def twitter
 
 
  def generic_callback( provider )
-    @user = User.from_omniauth(request.env["omniauth.auth"])
-    @identity = Identity.find_for_oauth env["omniauth.auth"]
+  #   @user = User.from_omniauth(request.env["omniauth.auth"])
+  #   @identity = Identity.find_for_oauth env["omniauth.auth"]
 
-    @identity.user = @user || current_user
-    if @user.nil?
-      @user = User.create( email: @identity.email || "" )
-      @identity.update_attribute( :user_id, @user.id )
-    end
+  #   @identity.user = @user || current_user
+  #   if @user.nil?
+  #     @user = User.create( email: @identity.email || "" )
+  #     @identity.update_attribute( :user_id, @user.id )
+  #   end
 
-    if @user.email.blank? && @identity.email
-      @user.update_attribute( :email, @identity.email || "")
-    end
+  #   if @user.email.blank? && @identity.email
+  #     @user.update_attribute( :email, @identity.email || "")
+  #   end
 
-    if @user.persisted?
-      @identity.update_attribute( :user_id, @user.id )
+  #   if @user.persisted?
+  #     @identity.update_attribute( :user_id, @user.id )
       
-      sign_in_and_redirect @user, event: :authentication
-      set_flash_message(:notice, :success, kind: provider.capitalize) if is_navigational_format?
+  #     sign_in_and_redirect @user, event: :authentication
+  #     set_flash_message(:notice, :success, kind: provider.capitalize) if is_navigational_format?
+  #   else
+  #     session["devise.#{provider}_data"] = env["omniauth.auth"]
+  #     redirect_to new_user_registration_url
+  #   end
+  # end
+#p env["omniauth.auth"]
+    @user = User.from_omniauth(env["omniauth.auth"], current_user)
+    if @user.persisted?
+      flash[:notice] = "You are in..!!! Go to edit profile to see the status for the accounts"
+      sign_in_and_redirect(@user)
     else
-      session["devise.#{provider}_data"] = env["omniauth.auth"]
+      session["devise.user_attributes"] = @user.attributes
       redirect_to new_user_registration_url
     end
-  end
+end
 
 end
