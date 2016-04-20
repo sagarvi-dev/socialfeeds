@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
 //= require_directory ./website
 //= require resumable-chunk
 //= require bootstrap-datetimepicker

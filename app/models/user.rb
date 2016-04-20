@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :passive_friends, -> { where(friendships: { approved: true}) }, :through => :passive_friendships, :source => :user
   has_many :pending_friends, -> { where(friendships: { approved: false}) }, :through => :friendships, :source => :friend
   has_many :requested_friendships, -> { where(friendships: { approved: false}) }, :through => :passive_friendships, :source => :user
-    has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "http://vignette3.wikia.nocookie.net/max-steel-reboot/images/7/72/No_Image_Available.gif"
+    has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100" }, :default_url => "https://www.esl101.com/sites/default/files/styles/m_290/public/user_placeholder.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
     def friends
       active_friends | passive_friends

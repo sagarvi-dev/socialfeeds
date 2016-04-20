@@ -1,6 +1,6 @@
 <li class="media message">
   <%= link_to image_tag(message.user.avatar.url(:thumb), alt: message.user.firstname, class: "media-object"),
-              message.user, target: '_blank', class: 'pull-left' %>
+              message.user, target: '_blank', class: 'pull-left userImage' %>
   <div class="media-body">
     <h4 class="media-heading"><%= link_to message.user.username, message.user, target: '_blank' %> says
       <small class="text-muted">[at <%= message.created_at.strftime('%-d %B %Y, %H:%M:%S') %>]</small></h4>

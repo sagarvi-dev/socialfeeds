@@ -6,21 +6,23 @@ class MessagesController < ApplicationController
   end
 
 
-def create
-  if current_user
-    @message = current_user.messages.build(message_params)
-    if @message.save
+  def create
+    respond_to do |format|
+      if current_user
+        @message = current_user.messages.build(message_params)
+        if @message.save
       flash[:success] = 'your message sent!'
     else
       flash[:error] = 'Your message can not sent.'
     end
+        format.html {redirect_to 'messages/new'}
+        format.js
+      else
+        format.html {redirect_to 'messages/new'}
+        format.js {render nothing: true}
+      end
+    end
   end
-  redirect_to 'messages/new'
-end
-
-private
-
-
 
 private
 

@@ -1,5 +1,7 @@
+<div class="container"> 
+
 <div class="well">
-  <%= form_for @message do |f| %>
+  <%= form_for @message, remote: true do |f| %>
     <div class="form-group">
       <%= f.label :body, 'Enter your message:' %>
       <%= f.text_area :body, rows: 3, class: 'form-control', required: true, maxlength: 2000 %>
@@ -9,7 +11,6 @@
     <%= f.submit 'Post', class: 'btn btn-primary' %>
   <% end %>
 </div>
-
 <div class="panel panel-default" >
     <div class="panel-body">
       <ul class="media-list">
@@ -17,3 +18,5 @@
       </ul>
     </div>
   </div>
+
+</div>

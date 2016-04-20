@@ -1,13 +1,14 @@
 <div class="container">
 <div class="row" style="margin-top: 16px;width: 1000px;">
 <% if current_user.identities.find_by_provider("twitter") %>
-  <div class="span5">
-  <h1>Twitter Feeds</h1>
+  <h1 class="page-header">Twitter Feeds</h1>
+  <div class="col-md-6 ">
+  
    
     <table class="table table-striped">
       <tr>
         
-        <th> MY Tweets</th>
+        <th> <h3>My Tweets</h3></th>
          <!-- <th> My Timeline </th> -->
       </tr>
     <% @tweets.each do |tweet| %>
@@ -15,8 +16,24 @@
           <td><%= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}" %></td>
         </tr>
       <% end %>
-     
+  
   </table>
+</div>
+  <div class="col-md-6 pull-right">
+  
+   
+    <table class="table table-striped">
+      <tr>
+              <th> <h3> My Timeline </h3></th>
+      </tr>
+    <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.text, "https://www.twitter.com/#{post.user.screen_name}" %></td>
+        </tr>
+      <% end %>
+  
+  </table>
+</div>
 <%else%>
   <%= link_to "twitter", '/users/auth/twitter', :class => 'btn btn-primary' %>
  <%end%>
