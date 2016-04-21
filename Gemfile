@@ -40,7 +40,7 @@ gem "koala"
 gem 'activerecord-session_store'
 gem "haml", '~> 4.0.6'
 gem "devise-token_authenticatable"
-gem "activeadmin", github: "activeadmin"
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem "sidekiq", '~> 3.4.1'
 gem 'bootstrap-datetimepicker-rails'
 gem "font-awesome-rails", '~> 4.3.0.0'
