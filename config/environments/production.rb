@@ -19,8 +19,9 @@ Rails.application.configure do
    :address => "127.0.0.1",
    :port    => 25,
    :domain  => 'gmail.com'
-   }
-
+    }
+  config.twitter_key = "HWW7W7sAiV0P4mtbPbt3Jaf3C"
+  config.twitter_secret = "AIEJq1OkJBdkY6u3EyHepLdyt3itJchDXmqFlu1BeZz1VdV2eI"
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like

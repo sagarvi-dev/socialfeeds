@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160415043502) do
   end
 
   create_table "identities", force: :cascade do |t|
+    t.string   "secret"
     t.integer  "user_id"
     t.string   "provider"
     t.string   "avatar_url"
@@ -50,24 +51,18 @@ ActiveRecord::Schema.define(version: 20160415043502) do
     t.string   "refreshtoken"
     t.string   "uid"
     t.string   "accesstoken"
-    t.integer  "user_id_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "messages", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
-    t.text     "message"
+    t.text     "body"
     t.boolean  "is_read"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "messages", ["friend_id"], name: "index_messages_on_friend_id"
-  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
