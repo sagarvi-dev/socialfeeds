@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
          user.save
       end
      end
+     identity.avatar_url = auth.info.image
+     identity.profile_url = auth.info.link
      identity.user_id = user.id
      identity.save
     end

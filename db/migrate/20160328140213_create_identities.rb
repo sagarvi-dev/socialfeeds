@@ -8,6 +8,7 @@ class CreateIdentities < ActiveRecord::Migration
       t.string :refreshtoken
       t.string :uid
       t.string :accesstoken 
+      t.string :secret
       t.references :user_id
       t.timestamps null: false
     end
