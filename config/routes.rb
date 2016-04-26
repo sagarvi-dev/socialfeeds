@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :user
   resources :messages, only: [:new, :create]
-  devise_for :users, :controllers => {:registrations => 'registrations' ,:omniauth_callbacks => "callbacks"}
+  devise_for :users, :controllers => {:omniauth_callbacks => "callbacks",:registrations => 'registrations'}
 
 devise_scope :user do
   get 'users/sign_out', :to => 'devise/sessions#destroy'
   match "/facebook" => "feeds#facebook", via: [:get,:post]
   match "/twitter" => "feeds#twitter", via: [:get,:post]
+  match "/instagram" => "feeds#instagram", via: [:get,:post]
   get '/dashboard', :to => 'dashboard#index'
   get '/friends', :to => 'friends#index'
   match "/messages" => "messages#new", via: [:get,:post]

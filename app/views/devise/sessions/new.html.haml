@@ -1,3 +1,4 @@
+.container
 = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-horizontal"}) do |f|
   %fieldset
     %legend
@@ -12,14 +13,14 @@
               = alert
     .form-group{:class => (resource.errors["email"].any? ? "has-error" : '')}
       %label.col-lg-2.control-label{:for => "inputEmail"} Email
-      .col-lg-10
+      .col-lg-5
         = f.email_field :email, autofocus: true, placeholder: 'email', :class => "form-control"
         - if resource.errors["email"].any?
           .errorMsg
             = resource.errors["email"][0]        
     .form-group{:class => (resource.errors["password"].any? ? "has-error" : '')}
       %label.col-lg-2.control-label{:for => "inputPassword"} Password
-      .col-lg-10
+      .col-lg-5
         = f.password_field :password, placeholder: 'password', :class => "form-control"
         - if resource.errors["password"].any?
           .errorMsg
@@ -32,10 +33,10 @@
       = f.label :remember_me
     
     .form-group
-      .col-lg-10.col-lg-offset-2
+      .col-lg-5.col-lg-offset-2
         = f.submit "Log in", :class => "btn btn-success", :name => "login"
     .form-group
-      .col-lg-10.col-lg-offset-2
+      .col-lg-5.col-lg-offset-2
         = render "devise/shared/auth_links"
     
     .form-group

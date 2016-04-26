@@ -22,7 +22,7 @@
               Feeds
               %span.caret
                 %ul.dropdown-menu{:role => "menu"}
-                  - ['facebook', 'twitter'].each do |provider|
+                  - ['facebook', 'twitter','instagram','linkedin'].each do |provider|
                     - if current_user.identities.pluck(:provider).include?(provider.to_s)
                       %li
                         = link_to t(provider.to_s), provider.to_s

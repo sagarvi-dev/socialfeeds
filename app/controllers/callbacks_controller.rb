@@ -38,6 +38,14 @@ def twitter
     generic_callback( 'twitter' )
   end
 
+   def linkedin
+    generic_callback( 'linkedin' )
+  end
+
+def instagram
+    generic_callback( 'instagram' )
+  end
+
 
 
  def generic_callback( provider )

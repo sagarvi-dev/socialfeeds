@@ -58,3 +58,4 @@ function showHideDiv(divId) {
 function setScrollPosition(selectedId) {
   $('html,body').animate({scrollTop: ($("#" + selectedId).offset().top - 2) }, 'slow');
 }
+

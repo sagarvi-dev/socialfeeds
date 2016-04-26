@@ -37,6 +37,10 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'omniauth-facebook'
 gem "koala"
+gem 'omniauth-instagram'
+gem 'instagram'
+gem 'linkedin'
+gem 'omniauth-linkedin'
 gem 'activerecord-session_store'
 gem "haml", '~> 4.0.6'
 gem "devise-token_authenticatable"

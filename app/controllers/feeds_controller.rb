@@ -9,8 +9,7 @@ if current_user.identities
 	@picture = @facebook.get_picture("me")
 	@feed = @facebook.get_connections("me","feed")
 	@friends = @facebook.get_connections("me", "friends")
-
-    end
+ end
 	else
 		redirect_to "/"
 	end
@@ -38,8 +37,11 @@ def twitter
 		redirect_to "/"
 	end
     #$client.update("hey dude whatsup?!")
-  # @tweets = client.user_timeline(page: 1, count: 50)
-   
+  # @tweets = client.user_timeline(page: 1, count: 50)  
+end
+
+def instagram
+    @popular = Instagram.media_popular
 end
 
 
